@@ -4,6 +4,10 @@
 
 <style>
 html,body,#app {
-  @apply text-bk/65 font-400 w-screen h-screen m-0 p-0;
+  color: rgba(0,0,0, .65);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 </style>

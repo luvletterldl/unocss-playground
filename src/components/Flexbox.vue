@@ -4,19 +4,43 @@
 
 <template>
   <div id="flexbox">
-    <p m-3 text="purple dark:purple-300">
+    <p class="title">
       FlexBox
     </p>
-    <div border="~ purple rounded" flex flex-col items-center justify-evenly>
-      <p w-100px bg-pink-300 text-center>
+    <div class="ctn">
+      <p class="left">
         left
       </p>
-      <p text="center dark:fc" w-full>
+      <p class="center">
         center
       </p>
-      <p w-100px bg-pink-300 text-center>
+      <p class="right">
         right
       </p>
     </div>
   </div>
 </template>
+
+<style scoped>
+.title {
+  margin: 00.75rem;
+  color: purple;
+}
+
+.ctn {
+  display: flex;
+  flex: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 12px;
+}
+.left, .right {
+  width: 100px;
+  background: pink;
+  text-align: center;
+}
+.center {
+  text-align: center;
+  width: 100%;
+}
+</style>

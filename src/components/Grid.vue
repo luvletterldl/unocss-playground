@@ -3,21 +3,65 @@
 </script>
 
 <template>
-  <h3 id="grid" text="blue-500 dark:blue">
+  <h3 id="grid">
     Grid Layout
   </h3>
-  <div w-90 h-90 grid grid-rows-5 grid-cols-5 gap-10px border="~ gray">
-    <div bg-blue row="start-1 end-1" col="start-1 span-5">
+  <div class="ctn">
+    <div class="header">
       header
     </div>
-    <div bg-green row="start-2 span-3" col="start-1 end-2">
+    <div class="nav">
       nav
     </div>
-    <div bg-yellow row="start-2 end-5" col="start-2 span-4">
+    <div class="body">
       body
     </div>
-    <div bg-pink row="start-5 span-1" col="start-1 span-5">
+    <div class="footer">
       footer
     </div>
   </div>
 </template>
+
+<style scoped>
+#grid {
+  margin: 0.75rem 0;
+  color: blue;
+}
+.ctn {
+  display: grid;
+  border: 1px gray solid;
+  width: 22.5rem;
+  height: 22.5rem;
+  grid-gap: 10px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+}
+.header {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  background: blue;
+}
+.nav {
+  grid-row-start: 2;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background: green;
+}
+.body {
+  grid-row-start: 2;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 6;
+  background: yellow;
+}
+.footer {
+  grid-row-start: 5;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  background: pink;
+}
+</style>

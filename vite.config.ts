@@ -6,9 +6,6 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
-import transformerVariantGroup from '@unocss/transformer-variant-group'
-import transformerDirective from '@unocss/transformer-directives'
 
 export default defineConfig({
   resolve: {
@@ -45,14 +42,6 @@ export default defineConfig({
       dts: true,
     }),
 
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss({
-      transformers: [
-        transformerDirective(),
-        transformerVariantGroup(),
-      ],
-    }),
   ],
 
   // https://github.com/vitest-dev/vitest

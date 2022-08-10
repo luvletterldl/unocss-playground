@@ -3,10 +3,27 @@
 </script>
 
 <template>
-  <div id="space" my-3>
-    <p dark:text-fc p-12px w="calc[50%-32px]" border="3px purple rounded dashed">
+  <div id="space">
+    <p>
       Space
     </p>
-    <div my-3 aspect="[5/3]" class="bg-[url(https://source.unsplash.com/collection/94734566/1920x1080)]" alt="" />
+    <div class="bg-img" alt="" />
   </div>
 </template>
+
+<style scoped>
+#space {
+  margin: 0.75rem 0;
+}
+p {
+  padding: 12px;
+  width: calc(50% - 32px);
+  border: 3px purple dashed;
+  border-radius: 12px;
+}
+.bg-img {
+  margin: 0.75rem 0;
+  aspect-ratio: 5 / 3;
+  background-image: url('https://source.unsplash.com/collection/94734566/1920x1080');
+}
+</style>

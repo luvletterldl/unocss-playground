@@ -3,30 +3,84 @@
 </script>
 
 <template>
-  <div id="text-size-color" dark:text-fc class="[&>p]:inline-block [&>p]:mx-3 [&>p]:p-3" text-right>
+  <div id="text-size-color">
     <h3>
       Text Size Color
     </h3>
-    <p text-sm hover:scale-200>
+    <p class="sm">
       sm text
     </p>
-    <p text-lg>
+    <p class="lg">
       lg text
     </p>
-    <p text-xl text="bk/30 hover:bk/50 dark:fc dark:hover:pink-400">
+    <p class="xl">
       xl text
     </p>
-    <p text-3xl text-shadow-lg>
+    <p class="txl">
       3xl text
     </p>
     <p text-16px>
       16px text
     </p>
-    <p text-9xl bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-purple-500 hover:to-pink-500 bg-clip-text>
+    <p class="slg">
       9xl text
     </p>
   </div>
-  <div line-clamp-2 w="1/3" dark:text-fc>
+  <div class="text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </template>
+
+<style scoped>
+#text-size-color {
+  text-align: right;
+}
+p {
+  display: inline-block;
+  margin: 0 0.75rem;
+  padding: 0.75rem;
+}
+.sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.sm:hover {
+  transform: scale(2);
+}
+.lg {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+.xl {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: rgba(0,0,0 ,0.3);
+}
+.xl:hover {
+  color: rgba(0,0,0 ,0.5);
+}
+
+.txl {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-shadow: 1.2rem;
+}
+
+.slg {
+  font-size: 9rem;
+  line-height: 9rem;
+  background: linear-gradient(to right, violet, fuchsia);
+}
+.slg:hover {
+  background: linear-gradient(to right, purple, pink);
+}
+
+.text {
+  width: 33%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+</style>

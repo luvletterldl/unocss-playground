@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { isDark, toggleDark } from '~/composables'
 const mode = useColorMode({
   attribute: 'theme',
   modes: {
@@ -11,16 +10,16 @@ const mode = useColorMode({
 </script>
 
 <template>
-  <main scroll-smooth p-3>
-    <header flex items-center border="main dashed 2px">
-      <nav dark:text-fc flex flex-row flex-nowrap overflow-x-auto m-3 class="[&>a]:p-3 [&>a]:rounded-lg [&>a]:mr-2 [&>a]:border-main [&>a]:border-1px">
+  <main>
+    <header>
+      <nav>
         <a href="#text-size-color">text-size-color</a>
         <a href="#grid">grid</a>
         <a href="#flexbox">flexbox</a>
         <a href="#space">space</a>
       </nav>
       <label for="switch-theme">切换主题</label>
-      <select v-model="mode" dark:text-hex-333 switch-theme outline-none border="~ main rounded" mx-3>
+      <select v-model="mode">
         <option value="" selected>
           默认
         </option>
@@ -31,10 +30,6 @@ const mode = useColorMode({
           学生
         </option>
       </select>
-      <button icon-btn @click="toggleDark()">
-        <div v-if="isDark" text="lg dark:fc" i-carbon-moon />
-        <div v-else text="lg dark:fc" i-carbon-sun />
-      </button>
     </header>
     <text-size-color />
     <grid />
@@ -42,3 +37,39 @@ const mode = useColorMode({
     <space />
   </main>
 </template>
+
+<style scoped>
+main {
+  overscroll-behavior: smooth;
+  padding: 0.75rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  border: 2px var(--main) dashed;
+}
+nav {
+  display: flex;
+  flex: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  margin: 0.75rem;
+}
+a {
+  padding: 0.75rem;
+  border-radius: 12px;
+  margin-right: 0.5rem;
+  border: 1px var(--main) solid;
+}
+select {
+  outline: none;
+  border: 1px var(--main) solid;
+  margin: 0.75rem;
+}
+</style>
