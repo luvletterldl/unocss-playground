@@ -23,7 +23,7 @@
 
 <style scoped>
 .title {
-  margin: 00.75rem;
+  margin: 0.75rem;
   color: purple;
 }
 
